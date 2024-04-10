@@ -9,3 +9,10 @@ $x_large: 1200px;
     &{ @content; }
   }
 }
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 0;
+  gap: 24px;
+}
