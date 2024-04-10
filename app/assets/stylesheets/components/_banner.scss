@@ -1,0 +1,37 @@
+.banner {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 48px 0;
+  gap: 24px;
+  @include media-min($large) {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+    padding: 120px 0 0 0;
+  }
+}
+
+.banner-img {
+  display: block;
+  background-color: $black;
+  border-radius: 4px;
+  height: 260px;
+  @include media-min($large) {
+    height: 440px;
+    width: 440px;
+  }
+}
+
+.banner-intro {
+  h1 {
+    margin-bottom: 32px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  @include media-min($large) {
+    width: 360px;
+    flex-grow: 1;
+  }
+}
