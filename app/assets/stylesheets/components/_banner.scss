@@ -24,7 +24,10 @@
 
 .banner-intro {
   h1 {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    @include media-min($large) {
+      margin-bottom: 32px;
+    }
   }
   div {
     display: flex;

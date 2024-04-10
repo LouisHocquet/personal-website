@@ -1,0 +1,35 @@
+.service-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include media-min($large) {
+    flex-direction: row;
+    gap: 64px;
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 32px;
+  border: solid $black;
+  border-radius: 4px;
+  i {
+    color: $primary;
+    font-size: 32px;
+    @include media-min($large) {
+      font-size: 40px;
+    }
+  }
+  p {
+    margin: 0;
+  }
+  @include media-min($large) {
+    width: 280px;
+    flex-grow: 1;
+    gap: 24px;
+    padding: 32px 40px;
+  }
+}
