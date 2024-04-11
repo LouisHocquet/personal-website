@@ -4,6 +4,9 @@ $medium: 768px;
 $large: 992px;
 $x_large: 1200px;
 
+// Effects
+$box_shadow: 6px 4px 1px $primary;
+
 @mixin media-min($_min-width) {
   @media screen and (min-width: $_min-width) {
     &{ @content; }
