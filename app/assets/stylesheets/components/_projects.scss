@@ -28,6 +28,13 @@
   @include media-min($large) {
     height: 560px;
   }
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 .project-card:hover {
@@ -87,7 +94,7 @@
 
 .card-image {
   // temp
-  // border: solid 2px $black;
+  border: solid 2px $black;
   background-color: $white;
   //
   width: 116%;
@@ -97,6 +104,7 @@
 }
 
 .card-mobile-thumbnail {
+  transition: all 600ms ease;
   overflow: hidden;
   position: absolute;
   border: solid 6px black;
