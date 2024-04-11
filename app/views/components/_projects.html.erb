@@ -1,2 +1,58 @@
-<%= cl_image_tag("louishocquet/wattivet_mobile_thumbnail") %>
-<%= cl_image_tag("louishocquet/wattivet_desktop_thumbnail") %>
+<div class="section projects">
+  <h2>Projets</h2>
+  <div class="project-cards">
+
+    <div class="project-card">
+      <div class="card-title">
+        <h3>Wattivet</h3>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+      <%= cl_image_tag("louishocquet/wattivet_desktop_thumbnail",
+      class: "card-image") %>
+      <div class="card-mobile-thumbnail">
+        <div class="nudge">
+          <div class="nudge-shape"></div>
+        </div>
+        <%= cl_image_tag("louishocquet/wattivet_mobile_thumbnail") %>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-title">
+        <h3>Randomize</h3>
+      </div>
+      <div class="card-empty-message">
+        <i class="fa-solid fa-person-digging"></i>
+        <p><strong>En construction</strong></p>
+        <p>Randomize proposera des activités de dernière minute aléatoires pour
+          favoriser la découverte de nouveaux concepts et les rencontres !
+        </p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-title">
+        <h3>Peut-être votre projet</h3>
+      </div>
+      <div class="card-empty-message">
+        <i class="fa-solid fa-bolt"></i>
+        <p><strong>Besoin d'aide ?</strong></p>
+        <p>
+          Parlez-moi de votre besoin : site internet, application web,
+          e-commerce, analyse de données ... Je peux sûrement vous aider !
+        </p>
+        <button type="button" class="btn btn-primary px-4 py-3 rounded-3">
+          Me contacter
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<%# <%= cl_image_tag("louishocquet/wattivet_mobile_thumbnail") %>
+<%# <%= cl_image_tag("louishocquet/wattivet_desktop_thumbnail") %>
