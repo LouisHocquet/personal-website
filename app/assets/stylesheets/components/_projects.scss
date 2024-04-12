@@ -112,28 +112,37 @@
   overflow: hidden;
   position: absolute;
   border: solid 6px black;
-  border-radius: 16px;
+  border-radius: 24px;
+  @include media-min($large) {
+    border-radius: 32px;
+  }
   left: 8px;
   top: 40%;
-  width: 44%;
+  width: 172px;
+  @include media-min($large) {
+    width: 240px;
+  }
   // @include media-min($large) {
   //   width: 32%;
   // }
   transform: translate(-500px, -6%);
   .nudge {
     position: absolute;
-    top: 6px;
+    top: 8px;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
+    @include media-min($large) {
+      top: 10px;
+    }
   }
   .nudge-shape {
     background-color: $black;
     height: 12px;
     border-radius: 20px;
     @include media-min($large) {
-      height: 16px;
+      height: 14px;
     }
     width: 32%;
   }
