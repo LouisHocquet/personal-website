@@ -22,3 +22,10 @@
     text-decoration: none;
   }
 }
+
+.contact {
+  margin-bottom: 48px;
+  @include media-min($large) {
+    margin-bottom: 64px;
+  }
+}
