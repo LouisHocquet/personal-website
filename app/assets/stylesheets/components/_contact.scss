@@ -1,0 +1,24 @@
+.contact-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  i {
+    font-size: 32px;
+    color: $primary;
+    @include media-min($large) {
+      font-size: 40px;
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  contact-icon {
+    text-decoration: none;
+  }
+}
