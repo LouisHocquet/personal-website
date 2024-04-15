@@ -2,12 +2,23 @@
   display: flex;
   justify-content: center;
   border-radius: 4px;
-  height: 300px;
+  height: 360px;
   @include media-min($large) {
     height: 440px;
     width: 440px;
   }
-  svg {
+  img {
     height: 100%;
   }
 }
+
+// .profile_layers {
+//   height: 100%;
+//   width: 100%;
+//   position: relative;
+//   svg {
+//     height: 100%;
+//     width: 100%;
+//     position: absolute;
+//   }
+// }
