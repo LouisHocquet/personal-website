@@ -4,7 +4,11 @@
   gap: 24px;
   @include media-min($large) {
     flex-direction: row;
-    gap: 64px;
+    gap: 32px;
+  }
+  @include media-min($x_large) {
+    flex-direction: row;
+    gap: 48px;
   }
 }
 
