@@ -15,7 +15,7 @@
         </div>
         <%= cl_image_tag("louishocquet/wattivet_mobile_thumbnail") %>
       </div>
-      <%= link_to "", wattivet_detail_path, target: :blank %>
+      <%= link_to "", wattivet_detail_path, target: :blank, class: "card-link" %>
     </div>
 
     <div class="project-card">
@@ -42,18 +42,13 @@
           Site internet, application web,
           ecommerce... Je peux sûrement vous aider !
         </p>
-        <button type="button" class="btn btn-primary px-4 py-3 rounded-3">
-          Me contacter
-        </button>
+        <%= link_to anchor: :contact do %>
+          <button type="button" class="btn btn-primary px-4 py-3 rounded-3">
+            Me contacter
+          </button>
+        <% end %>
       </div>
     </div>
 
   </div>
 </div>
-
-
-
-
-
-<%# <%= cl_image_tag("louishocquet/wattivet_mobile_thumbnail") %>
-<%# <%= cl_image_tag("louishocquet/wattivet_desktop_thumbnail") %>
