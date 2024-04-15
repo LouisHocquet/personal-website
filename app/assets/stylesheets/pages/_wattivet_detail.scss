@@ -3,8 +3,11 @@
   flex-direction: column;
   gap: 24px;
   @include media-min($large) {
-    gap: 32px;
+    gap: 48px;
   }
+  // @include media-min($x_large) {
+  //   gap: 64px;
+  // }
 }
 
 .project-detail-title {
@@ -18,7 +21,11 @@
   gap: 32px;
   @include media-min($large) {
     flex-direction: row;
+    gap: 48px;
   }
+  // @include media-min($x_large) {
+  //   gap: 64px;
+  // }
 }
 
 .project-task {
@@ -40,12 +47,19 @@
 }
 
 .desktop-visual, .mobile-visual {
-  min-width: 260px;
+  min-width: 240px;
   border: solid 1px $black;
   border-radius: 6px;
+  @include media-min($large) {
+    max-height: 480px;
+    min-width: 240px;
+  }
+  @include media-min($x_large) {
+    max-height: 550px;
+    min-width: 260px;
+  }
 }
 .mobile-visual {
-  // width: 260px;
   flex-grow: 1;
   display: none;
   @include media-min($large) {
