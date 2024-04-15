@@ -1,0 +1,57 @@
+.project-flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include media-min($large) {
+    gap: 32px;
+  }
+}
+
+.project-detail-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-visuals {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @include media-min($large) {
+    flex-direction: row;
+  }
+}
+
+.project-task {
+  i {
+    color: $primary;
+    width: 20px;
+    margin-right: 5px;
+    text-align: center;
+  }
+  margin-bottom: 8px;
+}
+
+.link-to-website {
+  i {
+    color: $primary;
+    width: 20px;
+    margin-right: 5px;
+  }
+}
+
+.desktop-visual, .mobile-visual {
+  min-width: 260px;
+  border: solid 1px $black;
+  border-radius: 6px;
+}
+.mobile-visual {
+  // width: 260px;
+  flex-grow: 1;
+  display: none;
+  @include media-min($large) {
+    display: block;
+  }
+}
+.desktop-visual {
+  flex-grow: 2;
+}
