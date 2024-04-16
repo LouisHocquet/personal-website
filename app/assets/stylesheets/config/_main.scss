@@ -6,6 +6,7 @@ $x_large: 1200px;
 
 // Effects
 $box_shadow: 6px 4px 1px $primary;
+$box-shadow-light: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
 @mixin media-min($_min-width) {
   @media screen and (min-width: $_min-width) {
@@ -18,4 +19,11 @@ $box_shadow: 6px 4px 1px $primary;
   flex-direction: column;
   padding: 48px 0;
   gap: 24px;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -70px;
+  visibility: hidden;
 }
