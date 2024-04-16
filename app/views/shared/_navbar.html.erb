@@ -1,6 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon"
+  data-controller="navbar" >
   <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= link_to root_path(anchor: :home), class: "navbar-brand",
+    data: { action: "click->navbar#colapse" } do %>
       <%= cl_image_tag "louishocquet/logo_big" %>
     <% end %>
 
@@ -8,21 +10,22 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"
+        data-navbar-target="colapsableElement">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item active">
-          <%= link_to "Accueil", root_path, class: "nav-link" %>
+        <li class="nav-item active" data-action="click->navbar#colapse">
+          <%= link_to "Accueil", root_path(anchor: :home), class: "nav-link" %>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item active" data-action="click->navbar#colapse">
           <%= link_to "Expertise", root_path(anchor: :services), class: "nav-link" %>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item active" data-action="click->navbar#colapse">
           <%= link_to "Projets", root_path(anchor: :projects), class: "nav-link" %>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item active" data-action="click->navbar#colapse">
           <%= link_to "A propos de moi", root_path(anchor: :about_me), class: "nav-link" %>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item active" data-action="click->navbar#colapse">
           <%= link_to anchor: :contact do %>
             <button type="button" class="btn btn-primary px-3 py-2 rounded-3">
               Me contacter
