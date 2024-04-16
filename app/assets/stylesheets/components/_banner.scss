@@ -1,9 +1,10 @@
 .banner {
   display: flex;
   flex-direction: column-reverse;
+  align-items: center;
   padding: 48px 0 0 0;
   gap: 24px;
-  text-align: center;
+
   @include media-min($medium) {
     gap: 48px;
   }
@@ -12,6 +13,7 @@
     align-items: center;
     gap: 64px;
     padding: 80px 0 0 0;
+    justify-content: space-between;
   }
   h1 {
     color: $primary;
@@ -30,6 +32,11 @@
 }
 
 .banner-intro {
+  max-width: 480px;
+  text-align: center;
+  @include media-min($large) {
+    text-align: start;
+  }
   h1 {
     margin-bottom: 24px;
     @include media-min($large) {
