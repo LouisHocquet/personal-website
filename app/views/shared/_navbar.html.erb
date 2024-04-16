@@ -3,7 +3,11 @@
   <div class="container-fluid">
     <%= link_to root_path(anchor: :home), class: "navbar-brand",
     data: { action: "click->navbar#colapse" } do %>
-      <%= cl_image_tag "louishocquet/logo_big" %>
+      <div class="logo">
+        <%# <i class="fa-solid fa-rocket"></i> %>
+        <p>LH</p>
+      </div>
+      <%# <%= cl_image_tag "louishocquet/logo_big" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
