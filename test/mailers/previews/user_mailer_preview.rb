@@ -8,4 +8,10 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.with(user: user).welcome
   end
 
+  # Preview this email at http://localhost:3000/rails/mailers/user_mailer/contact
+  def contact
+    contact = Contact.first
+    # UserMailer.with(contact: contact).contact
+    UserMailer.contact(contact)
+  end
 end
