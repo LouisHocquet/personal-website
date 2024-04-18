@@ -3,22 +3,16 @@
   <h2>Contact</h2>
   <div class="contact-links">
     <div class="contact-link">
-      <%= link_to "mailto:louis.hocquet@sfr.fr", class: "contact-icon" do %>
+      <%= link_to "https://www.linkedin.com/in/louis-hocquet/", class: "contact-icon" do %>
+        <i class="fa-brands fa-linkedin-in"></i>
+      <% end %>
+    </div>
+    <div class="contact-link">
+      <%= link_to "mailto:hello@louishocquet.com", class: "contact-icon" do %>
         <i class="fa-solid fa-envelope"></i>
       <% end %>
-      <%= link_to "mailto:hello@louishocquet.com", class: "contact-text" do %>
-        <p>Par email</p>
-      <% end %>
     </div>
-    <p> ou </p>
-    <div class="contact-link">
-      <%= link_to "https://www.linkedin.com/in/louis-hocquet/", class: "contact-icon" do %>
-        <i class="fa-brands fa-linkedin"></i>
-      <% end %>
-      <%= link_to "https://www.linkedin.com/in/louis-hocquet/", class: "contact-text" do %>
-        <p>Sur Linkedin</p>
-      <% end %>
-    </div>
+
   </div>
 
   <div class="contact-form">
@@ -31,7 +25,7 @@
       </div>
       <div class="col-xs-12 col-sm-6">
         <div class="form-group <%= @email_errors ? 'form-group-error' : '' %>">
-          <%= f.text_field :email, placeholder: "E-mail", class: "form-control" %>
+          <%= f.text_field :email, placeholder: "Votre e-mail", class: "form-control" %>
           <% if @email_errors %>
             <span class="form-error-message"><%= @email_errors.first %></span>
           <% end %>
@@ -45,7 +39,7 @@
         <% end %>
     </div>
     <div class="actions">
-      <%= f.submit "SEND", class: "ren-btn" %>
+      <%= f.submit "Envoyer", class: "btn btn-primary px-3 py-3 rounded-3" %>
     </div>
   <% end %>
 </div>
