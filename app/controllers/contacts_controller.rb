@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      UserMailer.contact(@contact).deliver
+      # UserMailer.contact(@contact).deliver_now
       flash.alert = "Merci pour votre message, futur partenaire. Je reviens vers vous très rapidement !"
       redirect_to root_path
     else
