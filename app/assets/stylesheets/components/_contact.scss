@@ -5,5 +5,8 @@
   }
   button {
     width: 100%;
+    @include media-min($large) {
+      width: unset;
+    }
   }
 }
