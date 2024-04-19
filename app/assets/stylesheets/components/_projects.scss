@@ -25,7 +25,7 @@
     transition: all 300ms ease;
   }
   @include media-min($large) {
-    height: 560px;
+    height: 520px;
   }
   .card-link {
     position: absolute;
@@ -139,6 +139,7 @@
 }
 
 .card-mobile-thumbnail {
+  box-shadow: $box-shadow-light;
   transition: all 600ms ease;
   overflow: hidden;
   position: absolute;
@@ -150,12 +151,9 @@
   left: 8px;
   top: 40%;
   width: 172px;
-  @include media-min($large) {
-    width: 240px;
+  @include media-min($medium) {
+    width: 200px;
   }
-  // @include media-min($large) {
-  //   width: 32%;
-  // }
   transform: translate(-500px, -6%);
   .nudge {
     position: absolute;
