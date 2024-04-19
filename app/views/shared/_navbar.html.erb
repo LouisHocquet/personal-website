@@ -30,7 +30,7 @@
           <%= link_to "A propos de moi", root_path(anchor: :about_me), class: "nav-link" %>
         </li>
         <li class="nav-item active" data-action="click->navbar#colapse">
-          <%= link_to anchor: :contact do %>
+          <%= link_to new_contact_path do %>
             <button type="button" class="btn btn-primary px-3 py-2 rounded-3">
               Me contacter
             </button>
