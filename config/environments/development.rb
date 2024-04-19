@@ -57,13 +57,12 @@ Rails.application.configure do
 
   # mailtrap demo domain
   config.action_mailer.smtp_settings = {
-    :address => 'live.smtp.mailtrap.io',
-    :port => '587',
-    :domain => 'demomailtrap.com',
-    :user_name => ENV['MAILTRAP_USERNAME'],
-    :password => ENV['MAILTRAP_PASSWORD_DEMO'],
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    :user_name => ENV['MAILTRAP_SANDBOX_USERNAME'],
+    :password => ENV['MAILTRAP_SANDBOX_PASSWORD'],
+    :address => 'sandbox.smtp.mailtrap.io',
+    :host => 'sandbox.smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :login
   }
 
   # config.action_mailer.delivery_method = :mailtrap

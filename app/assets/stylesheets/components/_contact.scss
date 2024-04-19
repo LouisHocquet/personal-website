@@ -28,17 +28,15 @@
 
 .contact {
   margin-bottom: 48px;
-  // @include media-min($large) {
-  //   margin-bottom: 64px;
-  // }
+  @include media-min($large) {
+    margin-bottom: 64px;
+  }
 }
 
 .form-control {
   border: 2px solid $gray;
   border-radius: 5px;
   padding: 12px 8px;
-  // padding-top: 15px;
-  // padding-bottom: 15px;
   margin-bottom: 12px;
   @include media-min($medium){
     margin-bottom: 16px;
@@ -76,9 +74,5 @@ textarea.form-control {
 .contact-form {
   input[type="submit"] {
     width: 100%;
-    // @include media-min($large) {
-    //   padding-top: 1rem !important;
-    //   padding-bottom: 1rem !important;
-    // }
   }
 }

@@ -2,7 +2,10 @@
   display: flex;
   justify-content: center;
   border-radius: 4px;
-  height: 320px;
+  height: 280px;
+  @include media-min($medium){
+    height: 320px;
+  }
   @include media-min($large) {
     height: 440px;
     width: 440px;
@@ -11,14 +14,3 @@
     height: 100%;
   }
 }
-
-// .profile_layers {
-//   height: 100%;
-//   width: 100%;
-//   position: relative;
-//   svg {
-//     height: 100%;
-//     width: 100%;
-//     position: absolute;
-//   }
-// }
