@@ -1,13 +1,16 @@
 .contact-links {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 24px;
   i {
     font-size: 32px;
-    color: $primary;
+    color: $gray;
     @include media-min($large) {
       font-size: 40px;
     }
+  }
+  i:hover {
+    color: $primary;
   }
   p {
     margin: 0;
@@ -17,7 +20,7 @@
 .contact-link {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 32px;
   contact-icon {
     text-decoration: none;
   }
@@ -27,5 +30,49 @@
   margin-bottom: 48px;
   @include media-min($large) {
     margin-bottom: 64px;
+  }
+}
+
+.form-control {
+  border: 2px solid $gray;
+  border-radius: 5px;
+  padding: 12px 8px;
+  margin-bottom: 12px;
+  @include media-min($medium){
+    margin-bottom: 16px;
+  }
+  @include media-min($large){
+    margin-bottom: 24px;
+  }
+  color: $gray;
+  transition: box-shadow border-color 250ms ease;
+  &:focus {
+    border-color: $gray;
+    box-shadow: $box_shadow;
+  }
+  &::placeholder {
+    font-weight: lighter;
+  }
+}
+
+.form-group-error {
+  .form-control {
+    background-color: rgba(97,231,134,.1)
+  }
+  span {
+    font-size: smaller;
+  }
+}
+
+textarea.form-control {
+  height: 200px;
+  @include media-min($medium) {
+    height: 240px;
+  }
+}
+
+.contact-form {
+  input[type="submit"] {
+    width: 100%;
   }
 }

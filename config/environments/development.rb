@@ -42,17 +42,29 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.delivery_method = :letter_opener
-  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :smtp
+  # louishocquet.com
   # config.action_mailer.smtp_settings = {
+  #   :address => 'live.smtp.mailtrap.io',
+  #   :port => '587',
+  #   :domain => 'louishocquet.com',
   #   :user_name => ENV['MAILTRAP_USERNAME'],
   #   :password => ENV['MAILTRAP_PASSWORD'],
-  #   :address => 'live.smtp.mailtrap.io',
-  #   :domain => 'live.smtp.mailtrap.io',
-  #   :port => '587',
   #   :authentication => :plain,
   #   :enable_starttls_auto => true
   # }
+
+  # mailtrap demo domain
+  config.action_mailer.smtp_settings = {
+    :user_name => ENV['MAILTRAP_SANDBOX_USERNAME'],
+    :password => ENV['MAILTRAP_SANDBOX_PASSWORD'],
+    :address => 'sandbox.smtp.mailtrap.io',
+    :host => 'sandbox.smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :login
+  }
+
   # config.action_mailer.delivery_method = :mailtrap
   # config.action_mailer.mailtrap_settings = {
   #   api_key: ENV.fetch('MAILTRAP_API_KEY')

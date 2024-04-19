@@ -10,4 +10,12 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: "Compte admin créé 👌")
     # This will render a view in `app/views/user_mailer`!
   end
+
+  def contact(contact)
+    @contact = contact
+    mail(
+      to: "hello@louishocquet.com",
+      subject: "Nouveau contact 🚀"
+      )
+  end
 end
