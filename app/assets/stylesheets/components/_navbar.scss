@@ -45,7 +45,6 @@
     @include media-min($medium) {
       flex-direction: row;
       padding: 0;
-      gap: 32px;
     }
     @include media-min($large) {
       gap: 64px;
