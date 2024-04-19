@@ -1,13 +1,14 @@
 class Contact < ApplicationRecord
   after_create :send_contact_email
 
+  validates :name, :presence => { message: "Ne peut pas être vide" }
   validates :email,
-  :presence => :true,
+  :presence => { message: "Ne peut pas être vide" },
     :format => {
       :with => /\S+@\S+\.\S+/i,
       :message => "Votre adresse email doit être valide"
     }
-  validates :message, :presence => :true
+  validates :message, :presence => { message: "Ne peut pas être vide" }
 
   private
 
