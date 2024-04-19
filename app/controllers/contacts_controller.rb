@@ -16,15 +16,14 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       # UserMailer.contact(@contact).deliver_now
-      flash.alert = "Merci pour votre message, futur partenaire. Je reviens vers vous très rapidement !"
+      flash.alert = "Merci pour votre message, je reviens vers vous très rapidement !"
       redirect_to root_path
     else
       # redirect_to("https://www.louishocquet.com/#contact", allow_other_host: true)
       # redirect_to("https://www.louishocquet.com/#contact", allow_other_host: true, name: @contact.name, email: @contact.email, message: @contact.message, errors: @contact.errors.messages)
       # redirect_to("http://localhost:3000/#contact")
       redirect_to(
-        root_path(
-          anchor: :contact,
+        new_contact_path(
           contact_info: {name: @contact.name, email: @contact.email, message: @contact.message, errors: @contact.errors.messages}
         ))
 

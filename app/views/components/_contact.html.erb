@@ -1,45 +1,10 @@
 <div class="section contact">
-  <a class="anchor" id="contact"></a>
-  <h2>Contact</h2>
-  <div class="contact-links">
-    <div class="contact-link">
-      <%= link_to "https://www.linkedin.com/in/louis-hocquet/", class: "contact-icon" do %>
-        <i class="fa-brands fa-linkedin-in"></i>
-      <% end %>
-    </div>
-    <div class="contact-link">
-      <%= link_to "mailto:hello@louishocquet.com", class: "contact-icon" do %>
-        <i class="fa-solid fa-envelope"></i>
-      <% end %>
-    </div>
-
-  </div>
-
-  <div class="contact-form">
-  <%= form_for(@contact, remote: true)  do |f| %>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div class="form-group">
-          <%= f.text_field :name, placeholder: "Nom", class: "form-control"%>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="form-group <%= @email_errors ? 'form-group-error' : '' %>">
-          <%= f.text_field :email, placeholder: "Votre e-mail", class: "form-control" %>
-          <% if @email_errors %>
-            <span class="form-error-message"><%= @email_errors.first %></span>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="form-group <%= @message_errors ? 'form-group-error' : '' %>">
-      <%= f.text_area :message, placeholder: "Message", class: "form-control" %>
-        <% if @message_errors %>
-          <span class="form-error-message"><%= @message_errors.first %></span>
-        <% end %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Envoyer", class: "btn btn-primary px-3 py-3 rounded-3" %>
-    </div>
+  <h2>Prenons contact</h2>
+  <p>N'hésitez pas à me contacter si mon travail vous intéresse ou si vous avez un projet sur lequel je peux vous aider.
+    Je serai ravi d'en discuter avec vous 😉</p>
+  <%= link_to new_contact_path do %>
+    <button type="button" class="btn btn-primary px-3 py-3 rounded-3">
+      Me contacter
+    </button>
   <% end %>
 </div>
