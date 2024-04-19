@@ -19,15 +19,14 @@ class ContactsController < ApplicationController
       flash.alert = "Merci pour votre message, futur partenaire. Je reviens vers vous très rapidement !"
       redirect_to root_path
     else
-      redirect_to("https://www.louishocquet.com/#contact", allow_other_host: true)
       # redirect_to("https://www.louishocquet.com/#contact", allow_other_host: true)
       # redirect_to("https://www.louishocquet.com/#contact", allow_other_host: true, name: @contact.name, email: @contact.email, message: @contact.message, errors: @contact.errors.messages)
       # redirect_to("http://localhost:3000/#contact")
-      # redirect_to(
-      #   root_path(
-      #     anchor: :contact,
-      #     contact_info: {name: @contact.name, email: @contact.email, message: @contact.message, errors: @contact.errors.messages}
-      #   ))
+      redirect_to(
+        root_path(
+          anchor: :contact,
+          contact_info: {name: @contact.name, email: @contact.email, message: @contact.message, errors: @contact.errors.messages}
+        ))
 
       # redirect_to("http://localhost:3000/", allow_other_host: true, anchor: :contact)
     end
