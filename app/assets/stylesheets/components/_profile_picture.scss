@@ -7,6 +7,10 @@
     height: 320px;
   }
   @include media-min($large) {
+    height: 400px;
+    width: 400px;
+  }
+  @include media-min($x_large) {
     height: 440px;
     width: 440px;
   }

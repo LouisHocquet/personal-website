@@ -12,7 +12,7 @@
     flex-direction: row;
     align-items: center;
     gap: 64px;
-    padding: 80px 0 0 0;
+    padding: 48px 0 0 0;
     justify-content: space-between;
   }
   h1 {
@@ -26,6 +26,10 @@
   border-radius: 4px;
   height: 260px;
   @include media-min($large) {
+    height: 440px;
+    width: 440px;
+  }
+  @include media-min($x_large) {
     height: 440px;
     width: 440px;
   }
