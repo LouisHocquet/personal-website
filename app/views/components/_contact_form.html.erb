@@ -8,7 +8,8 @@
     </div>
     <div class="contact-link">
       <%= link_to "mailto:hello@louishocquet.com", class: "contact-icon" do %>
-        <i class="fa-solid fa-envelope"></i>
+        <%# <i class="fa-solid fa-envelope"></i> %>
+        <p>hello@louishocquet.com</p>
       <% end %>
     </div>
 
@@ -18,8 +19,11 @@
   <%= form_for(@contact, remote: true)  do |f| %>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <div class="form-group">
-          <%= f.text_field :name, placeholder: "Nom", class: "form-control"%>
+        <div class="form-group <%= @name_errors ? 'form-group-error' : '' %>">
+          <%= f.text_field :name, placeholder: "Nom", class: "form-control no-margin-mobile" %>
+          <% if @name_errors %>
+            <span class="form-error-message"><%= @name_errors.first %></span>
+          <% end %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6">

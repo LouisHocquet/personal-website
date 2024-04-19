@@ -30,13 +30,6 @@
   border: 2px solid $gray;
   border-radius: 5px;
   padding: 12px 8px;
-  margin-top: 12px;
-  @include media-min($medium){
-    margin-top: 16px;
-  }
-  @include media-min($large){
-    margin-top: 24px;
-  }
   color: $gray;
   transition: box-shadow border-color 250ms ease;
   &:focus {
@@ -48,17 +41,37 @@
   }
 }
 
+.form-control{
+  margin-top: 12px;
+  @include media-min($medium){
+    margin-top: 16px;
+  }
+  @include media-min($large){
+    margin-top: 24px;
+  }
+  &.no-margin-mobile {
+    margin: 0;
+    @include media-min($medium){
+      margin-top: 16px;
+    }
+    @include media-min($large){
+      margin-top: 24px;
+    }
+  }
+}
+
 .form-group-error {
   .form-control {
-    background-color: rgba(97,231,134,.1)
+    background-color: rgba(253, 16, 21, 0.1)
   }
   span {
     font-size: smaller;
+    color: $red;
   }
 }
 
 textarea.form-control {
-  height: 200px;
+  height: 160px;
   @include media-min($medium) {
     height: 240px;
   }

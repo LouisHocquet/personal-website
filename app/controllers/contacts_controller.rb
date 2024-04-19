@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
       @contact.name = params[:contact_info][:name] if params[:contact_info][:name]
       @contact.email = params[:contact_info][:email] if params[:contact_info][:email]
       @contact.message = params[:contact_info][:message] if params[:contact_info][:message]
+      @name_errors =  params[:contact_info][:errors][:name]
       @email_errors =  params[:contact_info][:errors][:email]
       @message_errors =  params[:contact_info][:errors][:message]
     end
