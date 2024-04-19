@@ -2,15 +2,26 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  .contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    color: $gray;
+  }
+  .contact-icon:hover {
+    color: $primary;
+  }
   i {
     font-size: 32px;
-    color: $gray;
+    // color: $gray;
     @include media-min($large) {
       font-size: 40px;
     }
   }
   i:hover {
-    color: $primary;
+    // color: $primary;
   }
   p {
     margin: 0;
