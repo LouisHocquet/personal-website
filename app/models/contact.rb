@@ -1,5 +1,5 @@
 class Contact < ApplicationRecord
-  after_create :send_contact_email
+  # after_create :send_contact_email
 
   validates :name, :presence => { message: "Ne peut pas être vide" }
   validates :email,

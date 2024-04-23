@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="section">
+        <div class="confirmation-message">
+          <i class="fa-regular fa-circle-check"></i>
+          <h1>Merci <%= @name %></h1>
+          <p>
+            J'ai bien reçu votre message et reviens vers vous dès que possible !
+            <br/>
+            À bientôt futur partenaire 😉
+          </p>
+          <%= link_to root_path do %>
+            <button type="button" class="btn btn-primary px-3 py-3 rounded-3">
+              Retour à l'accueil
+            </button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

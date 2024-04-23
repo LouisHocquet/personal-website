@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create, :new]
+  skip_before_action :authenticate_user!, only: [:create, :new, :confirmation]
 
   def new
     @contact = Contact.new
@@ -17,8 +17,14 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       # UserMailer.contact(@contact).deliver_now
-      flash.alert = "Merci pour votre message, je reviens vers vous très rapidement !"
-      redirect_to root_path
+      # flash.alert = "Merci pour votre message, je reviens vers vous très rapidement !"
+      # redirect_to con
+      redirect_to(
+        confirmation_contact_path(
+          name: @contact.name
+        )
+      )
+      # confirmation(@contact.name)
     else
       # redirect_to("https://www.louishocquet.com/#contact", allow_other_host: true)
       # redirect_to("https://www.louishocquet.com/#contact", allow_other_host: true, name: @contact.name, email: @contact.email, message: @contact.message, errors: @contact.errors.messages)
@@ -32,7 +38,18 @@ class ContactsController < ApplicationController
     end
   end
 
+  def confirmation
+    if params[:name]
+      @name = params[:name]
+    end
+    # @name = name
+    # redirect_to(
+    #   contact_confirmation_path(name: @name)
+    # )
+  end
+
   private
+
 
   def contact_params
     params.require(:contact).permit(:name, :email, :message)

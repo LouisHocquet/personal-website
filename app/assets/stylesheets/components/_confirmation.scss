@@ -1,0 +1,30 @@
+.confirmation-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 64px;
+  @include media-min($medium){
+    padding-top: 72px;
+  }
+  @include media-min($large){
+    padding-top: 80px;
+  }
+  gap: 24px;
+  text-align: center;
+  @include media-min($medium) {
+    gap: 32px;
+  }
+  @include media-min($large) {
+    gap: 40px;
+  }
+  i {
+    color: $primary;
+    font-size: 64px;
+    @include media-min($medium) {
+      font-size: 80px;
+    }
+    @include media-min($large) {
+      font-size: 88px;
+    }
+  }
+}
