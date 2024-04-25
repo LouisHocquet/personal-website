@@ -1,0 +1,8 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :url %>
+  <%= f.input :cover_photo, as: :file %>
+  <%= f.input :main_thumbnail, as: :file %>
+  <%= f.input :mobile_thumbnail, as: :file %>
+  <%= f.submit %>
+<% end %>
