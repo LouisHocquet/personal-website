@@ -3,21 +3,26 @@
   <h2>Projets</h2>
   <div class="project-cards">
 
-    <div class="project-card project-card-active">
-      <div class="card-title">
-        <h3>Wattivet</h3>
-        <i class="fa-solid fa-arrow-right"></i>
-      </div>
-      <%= cl_image_tag("louishocquet/wattivet_desktop_thumbnail",
-      class: "card-image") %>
-      <div class="card-mobile-thumbnail">
-        <div class="nudge">
-          <div class="nudge-shape"></div>
+    <% @projects.each do |project| %>
+      <div class="project-card project-card-active">
+        <div class="card-title">
+          <h3><%= project.name %></h3>
+          <i class="fa-solid fa-arrow-right"></i>
         </div>
-        <%= cl_image_tag("louishocquet/wattivet_mobile_thumbnail") %>
+        <%= cl_image_tag project.cover_photo.key, class: "card-image" %>
+
+        <% if project.cover_photo_mobile.attached? %>
+          <div class="card-mobile-thumbnail">
+            <div class="nudge">
+              <div class="nudge-shape"></div>
+            </div>
+            <%= cl_image_tag project.cover_photo_mobile.key %>
+          </div>
+        <% end %>
+
+        <%= link_to "", project_path(project), class: "card-link" %>
       </div>
-      <%= link_to "", wattivet_detail_path, target: :blank, class: "card-link" %>
-    </div>
+    <% end %>
 
     <div class="project-card">
       <div class="card-title">

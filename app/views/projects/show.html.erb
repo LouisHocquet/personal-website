@@ -3,19 +3,46 @@
     <div class="col">
       <div class="section">
         <div class="project-detail-title">
-          <h1><%= @project_title %></h1>
-          <p class="link-to-website">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            <%= link_to "Voir le site internet", @project_url, target: :blank %>
-          </p>
+          <h1><%= @project.name  %></h1>
+          <% if @project.url %>
+            <p class="link-to-website">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <%= link_to "Voir le site internet", @project.url, target: :blank %>
+            </p>
+          <% end %>
         </div>
         <div class="project-flex-container">
           <div class="project-visuals">
-            <%= cl_image_tag("louishocquet/wattivet_mobile_banner", class: "mobile-visual") %>
-            <%= cl_image_tag("louishocquet/wattivet_desktop_banner", class: "desktop-visual") %>
+            <% if @project.cover_photo_mobile.attached? %>
+              <%= cl_image_tag @project.cover_photo_mobile.key, class: "mobile-visual" %>
+            <% end %>
+            <%= cl_image_tag @project.cover_photo.key, class: "desktop-visual" %>
           </div>
+
           <div class="project-description">
-            <p>
+            <div>
+              <% if @project.context %>
+                <h3>Contexte</h3>
+                <%= @project.context %>
+              <% end %>
+            </div>
+
+            <div>
+              <% if @project.mission %>
+                <h3>Mission</h3>
+                <%= @project.mission %>
+              <% end %>
+            </div>
+
+            <div>
+              <% if @project.highlight %>
+                <h3>Ce qui m'a plu</h3>
+                <%= @project.highlight %>
+              <% end %>
+            </div>
+
+
+            <%# <p>
               <strong>Wattivet</strong> est une clinique vétérinaire spécialisée dans les soins aux chiens et chats.
               L'équipe souhaitait développer sa notoriété sur internet, faciliter la prise de rendez-vous et montrer un aperçu de la vie à la clinique.
             </p>
@@ -59,7 +86,7 @@
               <li>Une courte présentation et l'historique de l'établissement</li>
               <li>L'affichage des avis Google</li>
               <li>Une présentation plus détaillée de chaque membre de l'équipe</li>
-            </ul>
+            </ul> %>
           </div>
         </div>
       </div>

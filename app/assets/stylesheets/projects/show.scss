@@ -5,9 +5,6 @@
   @include media-min($large) {
     gap: 48px;
   }
-  // @include media-min($x_large) {
-  //   gap: 64px;
-  // }
 }
 
 .project-detail-title {
@@ -27,9 +24,18 @@
     flex-direction: row;
     gap: 48px;
   }
-  // @include media-min($x_large) {
-  //   gap: 64px;
-  // }
+}
+
+.project-description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @include media-min($medium) {
+    gap: 24px;
+  }
+  @include media-min($large) {
+    gap: 32px;
+  }
 }
 
 .project-task {
@@ -72,4 +78,7 @@
 }
 .desktop-visual {
   flex-grow: 2;
+  @include media-min($large) {
+    max-height: unset;
+  }
 }

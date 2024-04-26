@@ -5,9 +5,11 @@
 @import "config/main";
 
 // External libraries
+@import "trix";
 @import "bootstrap";
 @import "font-awesome";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "projects/index"

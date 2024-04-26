@@ -1,0 +1,14 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :url %>
+  <%= f.label :context, class: "mb-4" %>
+  <%= f.rich_text_area :context %>
+  <%= f.label :mission, class: "mb-4 mt-3" %>
+  <%= f.rich_text_area :mission %>
+  <%= f.label :highlight, class: "mb-4 mt-3" %>
+  <%= f.rich_text_area :highlight, class: "mb-3" %>
+  <%= f.input :cover_photo, as: :file %>
+  <%= f.input :cover_photo_mobile, as: :file %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit %>
+<% end %>
