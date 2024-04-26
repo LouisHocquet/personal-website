@@ -3,8 +3,17 @@
     <div class="col">
       <div class="section">
         <h1>Projets</h1>
+        <div>
+          <% @projects.each do |project| %>
+            <div class="d-flex justify-content-between border rounded-3 p-4">
+              <h3><%= project.name %></h3>
+              <%= link_to("Modifier", edit_project_path(project), class:"btn btn-primary px-3 py-2 rounded-3") %>
+            </div>
+
+          <% end %>
+        </div>
+        <%= link_to("Nouveau", new_project_path, class:"btn btn-primary px-3 py-2 rounded-3") %>
       </div>
-      <%= link_to("Nouveau", new_project_path, class:"btn btn-primary px-3 py-2 rounded-3") %>
     </div>
   </div>
 </div>
