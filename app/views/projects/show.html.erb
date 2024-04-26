@@ -2,9 +2,93 @@
   <div class="row">
     <div class="col">
       <div class="section">
-        <h1>Projet : <%= @project.name  %></h1>
-        <p><%= @project.url %></p>
-        <%= cl_image_tag @project.cover_photo.key %>
+        <div class="project-detail-title">
+          <h1><%= @project.name  %></h1>
+          <% if @project.url %>
+            <p class="link-to-website">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <%= link_to "Voir le site internet", @project.url, target: :blank %>
+            </p>
+          <% end %>
+        </div>
+        <div class="project-flex-container">
+          <div class="project-visuals">
+            <% if @project.cover_photo_mobile.attached? %>
+              <%= cl_image_tag @project.cover_photo_mobile.key, class: "mobile-visual" %>
+            <% end %>
+            <%= cl_image_tag @project.cover_photo.key, class: "desktop-visual" %>
+          </div>
+
+          <div class="project-description">
+            <div>
+              <% if @project.context %>
+                <h3>Contexte</h3>
+                <%= @project.context %>
+              <% end %>
+            </div>
+
+            <div>
+              <% if @project.mission %>
+                <h3>Mission</h3>
+                <%= @project.mission %>
+              <% end %>
+            </div>
+
+            <div>
+              <% if @project.highlight %>
+                <h3>Ce qui m'a plu</h3>
+                <%= @project.highlight %>
+              <% end %>
+            </div>
+
+
+            <%# <p>
+              <strong>Wattivet</strong> est une clinique vétérinaire spécialisée dans les soins aux chiens et chats.
+              L'équipe souhaitait développer sa notoriété sur internet, faciliter la prise de rendez-vous et montrer un aperçu de la vie à la clinique.
+            </p>
+            <p>
+              Ce site vitrine a été développé en deux semaines: de la compréhension du besoin au développement de
+              la première version. Actuellement, le site présente :
+            </p>
+            <ul>
+              <li>Des photos immersives du quotidien à la clinique</li>
+              <li>Les horaires et la procédure de prise de rendez-vous</li>
+              <li>La localisation de la clinique et les conseils pour s'y rendre</li>
+              <li>Les expertises principales de la clinique</li>
+              <li>L'équipe au complet</li>
+            </ul>
+
+            <p><strong>Ce que j'ai fait</strong></p>
+            <ul class="list-unstyled project-tasks">
+              <li class="project-task">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                Design Web
+              </li>
+              <li class="project-task">
+                <i class="fa-solid fa-code"></i>
+                Développement Web (Front-end)
+              </li>
+              <li class="project-task">
+                <i class="fa-solid fa-envelope"></i>
+                Création d'une adresse professionnelle
+              </li>
+              <li class="project-task">
+                <i class="fa-solid fa-camera"></i>
+                Séances photo
+              </li>
+            </ul>
+
+            <p><strong>Améliorations à venir</strong></p>
+            <p>
+              Nous travaillons avec l'équipe sur l'amélioration progressive du site internet avec de nouvelles fonctionnalités à venir :
+            </p>
+            <ul>
+              <li>Une courte présentation et l'historique de l'établissement</li>
+              <li>L'affichage des avis Google</li>
+              <li>Une présentation plus détaillée de chaque membre de l'équipe</li>
+            </ul> %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

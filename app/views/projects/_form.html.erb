@@ -9,7 +9,6 @@
   <%= f.rich_text_area :highlight, class: "mb-3" %>
   <%= f.input :cover_photo, as: :file %>
   <%= f.input :cover_photo_mobile, as: :file %>
-  <%= f.input :main_thumbnail, as: :file %>
-  <%= f.input :mobile_thumbnail, as: :file %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>
