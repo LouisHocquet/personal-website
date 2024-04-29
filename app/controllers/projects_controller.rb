@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @expertises = Expertise.all
   end
 
   def create
@@ -24,6 +25,7 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    @expertises = Expertise.all
   end
 
   def update
@@ -35,6 +37,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :url, :cover_photo, :cover_photo_mobile, :context, :mission, :highlight, photos: [])
+    params.require(:project).permit(:name, :description, :url, :cover_photo, :cover_photo_mobile, :context, :mission, :highlight, expertise_ids: [], photos: [])
   end
 end

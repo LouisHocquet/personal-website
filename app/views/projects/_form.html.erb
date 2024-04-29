@@ -1,6 +1,15 @@
 <%= simple_form_for(@project) do |f| %>
   <%= f.input :name %>
   <%= f.input :url %>
+  <%=
+    f.input :expertise_ids,
+    label: 'Expertises',
+    collection: @expertises,
+    include_hidden: false,
+    include_blank: false,
+    input_html: { multiple: true}
+    # input_html: { multiple: true }
+  %>
   <%= f.label :context, class: "mb-4" %>
   <%= f.rich_text_area :context %>
   <%= f.label :mission, class: "mb-4 mt-3" %>

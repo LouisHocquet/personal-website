@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
+  has_and_belongs_to_many :expertises
+
   has_one_attached :cover_photo
   has_one_attached :cover_photo_mobile
   has_many_attached :photos
