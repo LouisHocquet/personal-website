@@ -206,3 +206,32 @@
     color: $black;
   }
 }
+
+.project-card-expertises {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  .project-card-expertise {
+    box-shadow: $box-shadow-light;
+  }
+}
+
+.project-card-expertise {
+  display: flex;
+  border-radius: 8px;
+  padding: 4px 8px;
+  align-items: center;
+  gap: 4px;
+  $box_shadow: $box-shadow-light;
+  min-width: fit-content;
+  background-color: $baby-powder;
+  color: $primary;
+  border: $primary 1px solid;
+  p {
+    margin: 0;
+  }
+}
