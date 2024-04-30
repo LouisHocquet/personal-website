@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_26_080044) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_29_153519) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,29 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_26_080044) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "expertises", force: :cascade do |t|
+    t.string "name"
+    t.string "fontawesome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "expertises_projects", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "expertise_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expertise_id"], name: "index_expertises_projects_on_expertise_id"
+    t.index ["project_id"], name: "index_expertises_projects_on_project_id"
+  end
+
+  create_table "expertises_shows", force: :cascade do |t|
+    t.bigint "expertise_id"
+    t.bigint "project_id"
+    t.index ["expertise_id"], name: "index_expertises_shows_on_expertise_id"
+    t.index ["project_id"], name: "index_expertises_shows_on_project_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -81,4 +104,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_26_080044) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "expertises_projects", "expertises"
+  add_foreign_key "expertises_projects", "projects"
 end

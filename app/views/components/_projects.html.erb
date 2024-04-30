@@ -20,6 +20,17 @@
           </div>
         <% end %>
 
+        <% unless project.expertises.empty? %>
+          <div class="project-card-expertises">
+            <% project.expertises.each do |expertise| %>
+              <div class="project-card-expertise">
+                <i class="<%= expertise.fontawesome.to_s %>"></i>
+                <p><%= expertise.name %></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
         <%= link_to "", project_path(project), class: "card-link" %>
       </div>
     <% end %>

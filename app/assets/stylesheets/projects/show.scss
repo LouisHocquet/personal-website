@@ -1,7 +1,7 @@
 .project-flex-container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
   @include media-min($large) {
     gap: 48px;
   }
@@ -29,12 +29,12 @@
 .project-description {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   @include media-min($medium) {
-    gap: 24px;
+    gap: 32px;
   }
   @include media-min($large) {
-    gap: 32px;
+    gap: 48px;
   }
 }
 
@@ -80,5 +80,14 @@
   flex-grow: 2;
   @include media-min($large) {
     max-height: unset;
+  }
+}
+
+.project-show-expertises {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  .project-card-expertise {
+    box-shadow: $box-shadow;
   }
 }
