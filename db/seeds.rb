@@ -15,7 +15,7 @@ if  Expertise.where(name: "Product Management").empty?
     name: "Product Management",
     fontawesome: "fa-solid fa-rocket"
   )
-  Expertise.save!
+  expertise.save!
   p "Create #{expertise.name}"
 end
 
@@ -24,7 +24,7 @@ if  Expertise.where(name: "Développement Web").empty?
     name: "Développement Web",
     fontawesome: "fa-solid fa-code"
   )
-  Expertise.save!
+  expertise.save!
   p "Create #{expertise.name}"
 end
 
@@ -33,7 +33,7 @@ if  Expertise.where(name: "Design Web").empty?
     name: "Design Web",
     fontawesome: "fa-solid fa-wand-magic-sparkles"
   )
-  Expertise.save!
+  expertise.save!
   p "Create #{expertise.name}"
 end
 

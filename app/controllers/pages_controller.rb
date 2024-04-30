@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :wattivet_detail]
+  skip_before_action :authenticate_user!, only: %i[home wattivet_detail]
   def home
     # @contact = Contact.new
     # if params[:contact_info]
@@ -10,6 +10,7 @@ class PagesController < ApplicationController
     #   @message_errors =  params[:contact_info][:errors][:message]
     # end
     @projects = Project.all
+    @expertises = Expertise.all
   end
 
   def admin

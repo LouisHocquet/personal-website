@@ -1,18 +1,13 @@
 <div class="section services">
   <a class="anchor" id="services"></a>
   <h2>Expertise</h2>
+
   <div class="service-cards">
-    <div class="service-card">
-      <i class="fa-solid fa-wand-magic-sparkles"></i>
-      <p>Design Web</p>
-    </div>
-    <div class="service-card">
-      <i class="fa-solid fa-code"></i>
-      <p>Développement Web</p>
-    </div>
-    <div class="service-card">
-      <i class="fa-solid fa-rocket"></i>
-      <p>Product Management</p>
-    </div>
+    <% @expertises.each do |expertise| %>
+      <div class="service-card">
+        <i class="<%= expertise.fontawesome.to_s %>"></i>
+        <p><%= expertise.name %></p>
+      </div>
+    <% end %>
   </div>
 </div>
