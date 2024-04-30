@@ -10,7 +10,7 @@
 p "Creating Expertises ..."
 p "---------------------"
 # Creating expertises
-unless  Expertise.where(name: "Product Management")
+if  Expertise.where(name: "Product Management").empty?
   expertise = Expertise.new(
     name: "Product Management",
     fontawesome: "fa-solid fa-rocket"
@@ -19,7 +19,7 @@ unless  Expertise.where(name: "Product Management")
   p "Create #{expertise.name}"
 end
 
-unless  Expertise.where(name: "Développement Web")
+if  Expertise.where(name: "Développement Web").empty?
   expertise = Expertise.new(
     name: "Développement Web",
     fontawesome: "fa-solid fa-code"
@@ -28,7 +28,7 @@ unless  Expertise.where(name: "Développement Web")
   p "Create #{expertise.name}"
 end
 
-unless  Expertise.where(name: "Design Web")
+if  Expertise.where(name: "Design Web").empty?
   expertise = Expertise.new(
     name: "Design Web",
     fontawesome: "fa-solid fa-wand-magic-sparkles"
