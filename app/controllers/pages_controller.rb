@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     #   @email_errors =  params[:contact_info][:errors][:email]
     #   @message_errors =  params[:contact_info][:errors][:message]
     # end
-    @projects = Project.all
+    @projects = Project.all.order(:id)
     @expertises = Expertise.all
   end
 
