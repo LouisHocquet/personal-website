@@ -226,12 +226,13 @@
   padding: 4px 8px;
   align-items: center;
   gap: 4px;
+  color: $primary;
+  background-color: $baby-powder;
   $box_shadow: $box-shadow-light;
   min-width: fit-content;
-  background-color: $primary;
-  color: $baby-powder;
-  border: $primary 1px solid;
+  border: $primary 2px solid;
   p {
     margin: 0;
+    font-weight: 500;
   }
 }
