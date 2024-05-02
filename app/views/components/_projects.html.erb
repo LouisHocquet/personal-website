@@ -11,14 +11,14 @@
         </div>
         <%= cl_image_tag project.cover_photo.key, class: "card-image" %>
 
-        <% if project.cover_photo_mobile.attached? %>
-          <div class="card-mobile-thumbnail">
+        <%# <% if project.cover_photo_mobile.attached? %>
+          <%# <div class="card-mobile-thumbnail">
             <div class="nudge">
               <div class="nudge-shape"></div>
             </div>
             <%= cl_image_tag project.cover_photo_mobile.key %>
-          </div>
-        <% end %>
+          <%# </div> %>
+        <%# <% end %>
 
         <% unless project.expertises.empty? %>
           <div class="project-card-expertises">
