@@ -1,17 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>Admin</h1>
-      <% if user_signed_in? %>
-        <p>Hello <%= current_user.email %></p>
-      <% else %>
-        <p>You must sign in</p>
-        <%= link_to new_user_session_path do %>
-          <button type="button" class="btn btn-primary px-4 py-3 rounded-3">
-            Login
-          </button>
+      <div class="section">
+        <h1>Admin</h1>
+        <% if user_signed_in? %>
+          <p>Hello <%= current_user.email %></p>
+          <h3>Projects</h3>
+          <p>Currently <%= Project.count %> projects displayed</p>
+          <%= link_to projects_path do %>
+            <button type="button" class="btn btn-primary px-3 py-2 rounded-3">Manage Projects</button>
+          <% end %>
+        <% else %>
+          <p>You must sign in</p>
+          <%= link_to new_user_session_path do %>
+            <button type="button" class="btn btn-primary px-3 py-2 rounded-3">
+              Login
+            </button>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
