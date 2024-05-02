@@ -79,7 +79,7 @@
 }
 .desktop-visual {
   flex-grow: 2;
-  object-fit: cover;
+  max-width: 720px;
   @include media-min($large) {
     max-height: unset;
   }
