@@ -90,19 +90,19 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_03_101353) do
     t.string "url"
   end
 
-  create_table "tools", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tools_projects", force: :cascade do |t|
+  create_table "projects_tools", force: :cascade do |t|
     t.bigint "project_id", null: false
     t.bigint "tool_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_tools_projects_on_project_id"
-    t.index ["tool_id"], name: "index_tools_projects_on_tool_id"
+    t.index ["project_id"], name: "index_projects_tools_on_project_id"
+    t.index ["tool_id"], name: "index_projects_tools_on_tool_id"
+  end
+
+  create_table "tools", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -121,6 +121,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_03_101353) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "expertises_projects", "expertises"
   add_foreign_key "expertises_projects", "projects"
-  add_foreign_key "tools_projects", "projects"
-  add_foreign_key "tools_projects", "tools"
+  add_foreign_key "projects_tools", "projects"
+  add_foreign_key "projects_tools", "tools"
 end

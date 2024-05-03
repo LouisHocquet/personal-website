@@ -7,11 +7,14 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @expertises = @project.expertises
+    @tools = @project.tools
   end
 
   def new
     @project = Project.new
     @expertises = Expertise.all
+    @tools = Tool.all
   end
 
   def create
@@ -26,6 +29,7 @@ class ProjectsController < ApplicationController
   def edit
     @project = Project.find(params[:id])
     @expertises = Expertise.all
+    @tools = Tool.all
   end
 
   def update
@@ -44,6 +48,6 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name, :description, :url, :cover_photo, :cover_photo_mobile, :context, :mission,
-                                    :highlight, expertise_ids: [], photos: [])
+                                    :highlight, expertise_ids: [], tool_ids: [], photos: [])
   end
 end

@@ -22,4 +22,15 @@
     pour permettre aux auto-entrepreneurs et petites entreprises de <strong>développer leur business</strong> sur Internet.
   </p>
 
+  <h2>
+    Outils et compétences
+  </h2>
+  <div class="tool-tags">
+    <% @tools.each do |tool| %>
+      <div class="tool-tag">
+        <%= tool.name %>
+      </div>
+    <% end %>
+  </div>
+
 </div>

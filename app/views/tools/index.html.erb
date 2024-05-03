@@ -2,11 +2,12 @@
   <div class="row">
     <div class="col">
       <div class="section">
-        <h1>Tools</h1>
+        <h1>Outils et compétences</h1>
         <div class="tool-tags">
           <% @tools.each do |tool| %>
             <div class="tool-tag">
               <%= tool.name %>
+              <%= link_to "", edit_tool_path(tool) %>
             </div>
           <% end %>
         </div>

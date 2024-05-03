@@ -8,7 +8,14 @@
     include_hidden: false,
     include_blank: false,
     input_html: { multiple: true}
-    # input_html: { multiple: true }
+  %>
+  <%=
+    f.input :tool_ids,
+    label: 'Outils et compétences',
+    collection: @tools,
+    include_hidden: false,
+    include_blank: false,
+    input_html: { multiple: true }
   %>
   <%= f.label :context, class: "mb-4" %>
   <%= f.rich_text_area :context %>
