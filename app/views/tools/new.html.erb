@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="section">
+        <h1>New Tool</h1>
+          <%= simple_form_for(@tool) do |f| %>
+            <%= f.input :name %>
+            <%= f.submit class: "btn btn-primary px-3 py-2 rounded-3" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

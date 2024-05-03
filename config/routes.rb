@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:create, :new, :confirmation]
   get "contacts/confirmation", to: "contacts#confirmation", as: :confirmation_contact
   resources :projects
+  resources :tools
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

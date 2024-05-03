@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   has_and_belongs_to_many :expertises
+  has_and_belongs_to_many :tools
 
   has_one_attached :cover_photo
   has_one_attached :cover_photo_mobile
@@ -8,7 +9,6 @@ class Project < ApplicationRecord
   has_rich_text :context
   has_rich_text :mission
   has_rich_text :highlight
-
 
   validates :name, presence: true
   validates :context, presence: true

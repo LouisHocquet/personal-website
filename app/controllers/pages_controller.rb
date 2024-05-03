@@ -14,6 +14,8 @@ class PagesController < ApplicationController
   end
 
   def admin
+    @tool = Tool.new
+    @tools = Tool.all
   end
 
   def wattivet_detail

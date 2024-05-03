@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="section">
+        <h1>Tools</h1>
+        <div class="tool-tags">
+          <% @tools.each do |tool| %>
+            <div class="tool-tag">
+              <%= tool.name %>
+            </div>
+          <% end %>
+        </div>
+        <%= link_to("Nouveau", new_tool_path, class:"btn btn-primary px-3 py-2 rounded-3") %>
+      </div>
+    </div>
+  </div>
+</div>
