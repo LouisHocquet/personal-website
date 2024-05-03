@@ -11,9 +11,12 @@ class PagesController < ApplicationController
     # end
     @projects = Project.all.order(:id)
     @expertises = Expertise.all
+    @tools = Tool.all
   end
 
   def admin
+    @tool = Tool.new
+    @tools = Tool.all
   end
 
   def wattivet_detail

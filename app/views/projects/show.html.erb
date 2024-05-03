@@ -22,13 +22,26 @@
           <div class="project-description">
 
             <div>
-              <h3>Expertises</h3>
-              <% unless @project.expertises.empty? %>
+              <% unless @expertises.empty? %>
+                <h3>Expertises</h3>
                 <div class="project-show-expertises">
-                  <% @project.expertises.each do |expertise| %>
+                  <% @expertises.each do |expertise| %>
                     <div class="project-card-expertise">
                       <i class="<%= expertise.fontawesome.to_s %>"></i>
                       <p><%= expertise.name %></p>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+            <div>
+              <% unless @tools.empty? %>
+                <h3>Outils et compétences</h3>
+                <div class="tool-tags">
+                  <% @tools.each do |tool| %>
+                    <div class="tool-tag">
+                      <%= tool.name %>
                     </div>
                   <% end %>
                 </div>

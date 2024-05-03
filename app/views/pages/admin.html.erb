@@ -10,6 +10,12 @@
           <%= link_to projects_path do %>
             <button type="button" class="btn btn-primary px-3 py-2 rounded-3">Manage Projects</button>
           <% end %>
+          <h3>Tools</h3>
+            <p>Currently <%= Tool.count %> tools</p>
+            <%= link_to tools_path do %>
+              <button type="button" class="btn btn-primary px-3 py-2 rounded-3">Manage Tools</button>
+            <% end %>
+          </div>
         <% else %>
           <p>You must sign in</p>
           <%= link_to new_user_session_path do %>
