@@ -4,7 +4,7 @@
   <div class="project-cards">
 
     <% @projects.each do |project| %>
-      <div class="project-card project-card-active">
+      <div class="project-card project-card-active hover">
         <div class="card-title">
           <h3><%= project.name %></h3>
           <i class="fa-solid fa-arrow-right"></i>
@@ -35,7 +35,7 @@
       </div>
     <% end %>
 
-    <div class="project-card">
+    <div class="project-card no-link">
       <div class="card-title">
         <h3>Randomize</h3>
       </div>
@@ -47,25 +47,22 @@
         </p>
       </div>
     </div>
-
-    <div class="project-card">
-      <div class="card-title">
-        <h3>Un projet à réaliser ?</h3>
+      <div class="project-card hover">
+        <div class="card-title">
+          <h3>Un projet à réaliser ?</h3>
+        </div>
+        <div class="card-empty-message">
+          <i class="fa-solid fa-bolt"></i>
+          <p><strong>Dites-m'en plus</strong></p>
+          <p>
+            Site internet, application web,
+            ecommerce... Je peux sûrement vous aider !
+          </p>
+            <button type="button" class="btn btn-primary px-3 py-3 rounded-3">
+              Me contacter
+            </button>
+        </div>
+        <%= link_to "", new_contact_path, class: "card-link" %>
       </div>
-      <div class="card-empty-message">
-        <i class="fa-solid fa-bolt"></i>
-        <p><strong>Dites-m'en plus</strong></p>
-        <p>
-          Site internet, application web,
-          ecommerce... Je peux sûrement vous aider !
-        </p>
-        <%= link_to new_contact_path do %>
-          <button type="button" class="btn btn-primary px-3 py-3 rounded-3">
-            Me contacter
-          </button>
-        <% end %>
-      </div>
-    </div>
-
   </div>
 </div>
